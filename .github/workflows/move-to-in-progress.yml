@@ -9,9 +9,10 @@ jobs:
   move-to-in-progress:
     runs-on: ubuntu-latest
     steps:
-      - name: Move issue to In Progress
-        uses: actions/add-to-project@v1
+      - name: Move linked issue to In Progress
+        uses: peter-evans/link-and-close-issues@v2
         with:
-          project-url: https://github.com/orgs/hemkass/projects/2
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          project-url: https://github.com/orgs/TON-ORGANISATION/projects/1
           status: "In Progress"
+
