@@ -1,0 +1,17 @@
+name: Move Issue to "In Progress" on PR Creation
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  move-to-in-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Move issue to In Progress
+        uses: actions/add-to-project@v1
+        with:
+          project-url: https://github.com/orgs/hemkass/projects/2
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          status: "In Progress"
